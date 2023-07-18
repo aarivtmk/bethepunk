@@ -76,11 +76,29 @@
 }
   </style>
   <div class="glb">
-  <model-viewer src="classic-mug.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="1" auto-rotate>
-</model-viewer>
+    <model-viewer id="color" camera-controls touch-action="pan-y" interaction-prompt="none" src="/classic-mug.glb" ar alt="A 3D model of an astronaut">
+      <div class="controls" id="color-controls">
+        <button data-color="#f8bb36">Yellow</button>
+        <button data-color="#00ff00">Green</button>
+        <button data-color="#a66cf1">Purple</button>
+      </div>
+    </model-viewer>
+    <script>
+    const modelViewerColor = document.querySelector("model-viewer#color");
+    
+    document.querySelector('#color-controls').addEventListener('click', (event) => {
+      const colorString = event.target.dataset.color;
+      const [material] = modelViewerColor.model.materials;
+      material.pbrMetallicRoughness.setBaseColorFactor(colorString);
+    });
+    </script>
 </div>
   <footer class="footer">
     &copy; 2023 BethePunk. All rights reserved.
   </footer>
+
+
+
+    
 </body>
 </html>

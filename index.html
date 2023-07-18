@@ -19,13 +19,13 @@
     }
     
     h1 {
-      font-size: 36px;
+      font-size: 66px;
       color: #333;
       margin-bottom: 20px;
     }
     
     p {
-      font-size: 18px;
+      font-size: 38px;
       color: #777;
       margin-bottom: 30px;
     }
@@ -61,15 +61,24 @@
   <div class="container">
     <h1>Welcome to BethePunk</h1>
     <p>Redefining Fashion with Punk Style</p>
-    <model-viewer src="classic-mug.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="1" auto-rotate camera-target="3.099e-7m 6m -1.637m">
-      <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-      </div>
-  
-  </model-viewer>
+
   
     <a href="https://www.instagram.com/bethepunk/" class="btn">Follow us for updates</a>
   </div>
+
+  <style>
+ model-viewer {
+    display: block;
+    position: relative;
+    contain: strict;
+    width: 100vw !important;
+    height: 550px;
+}
+  </style>
+  <div class="glb">
+  <model-viewer src="classic-mug.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="1" auto-rotate>
+</model-viewer>
+</div>
   <footer class="footer">
     &copy; 2023 BethePunk. All rights reserved.
   </footer>
